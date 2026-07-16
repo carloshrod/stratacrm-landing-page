@@ -3,8 +3,8 @@
 import { AnimatePresence } from "framer-motion";
 
 import { cn } from "@/lib/utils";
+import { formatCurrency } from "@/lib/format-currency";
 import { DealCard } from "./deal-card";
-import { formatCurrency } from "./format-currency";
 import type { Deal, Stage } from "./types";
 
 export function PipelineColumn({

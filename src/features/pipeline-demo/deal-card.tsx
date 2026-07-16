@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, Pencil } from "lucide-react";
 
 import { cn } from "@/lib/utils";
-import { formatCurrency } from "./format-currency";
+import { formatCurrency } from "@/lib/format-currency";
 import { stageOrder, stages } from "./stages";
 import { usePipelineDemoStore } from "./store";
 import type { Deal } from "./types";
