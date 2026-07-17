@@ -1,6 +1,7 @@
 import { Hero } from "@/components/marketing/hero/hero";
 import { ProblemSolutionSection } from "@/components/marketing/problem-solution/problem-solution";
 import { FeaturesSection } from "@/components/marketing/features/features";
+import { PricingSection } from "@/components/marketing/pricing/pricing";
 import { PipelineDemoSection } from "@/features/pipeline-demo/pipeline-demo-section";
 import { DashboardPreviewSection } from "@/features/dashboard-preview/dashboard-preview-section";
 
@@ -12,6 +13,7 @@ export default function Home() {
       <ProblemSolutionSection />
       <FeaturesSection />
       <DashboardPreviewSection />
+      <PricingSection />
     </main>
   );
 }
