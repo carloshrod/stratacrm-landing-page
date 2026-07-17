@@ -3,6 +3,7 @@ import { ProblemSolutionSection } from "@/components/marketing/problem-solution/
 import { FeaturesSection } from "@/components/marketing/features/features";
 import { PricingSection } from "@/components/marketing/pricing/pricing";
 import { TestimonialsSection } from "@/components/marketing/testimonials/testimonials";
+import { FinalCtaSection } from "@/components/marketing/final-cta/final-cta";
 import { PipelineDemoSection } from "@/features/pipeline-demo/pipeline-demo-section";
 import { DashboardPreviewSection } from "@/features/dashboard-preview/dashboard-preview-section";
 
@@ -16,6 +17,7 @@ export default function Home() {
       <DashboardPreviewSection />
       <PricingSection />
       <TestimonialsSection />
+      <FinalCtaSection />
     </main>
   );
 }
