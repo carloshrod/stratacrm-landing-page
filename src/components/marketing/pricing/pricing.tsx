@@ -171,7 +171,7 @@ export function PricingSection() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
   return (
-    <section id="precios" className="relative py-20 sm:py-28">
+    <section id="precios" className="relative scroll-mt-20 py-20 sm:py-28">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 16 }}

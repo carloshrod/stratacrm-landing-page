@@ -65,7 +65,7 @@ const secondaryTestimonials: Testimonial[] = [
 
 export function TestimonialsSection() {
   return (
-    <section id="testimonios" className="relative py-20 sm:py-28">
+    <section id="testimonios" className="relative scroll-mt-20 py-20 sm:py-28">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 16 }}

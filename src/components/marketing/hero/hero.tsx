@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { PipelinePreview } from "@/components/marketing/hero/pipeline-preview";
 
@@ -63,13 +63,16 @@ export function Hero() {
             transition={{ duration: 0.5, ease: "easeOut" }}
             className="mt-10 flex flex-col items-center gap-4 sm:flex-row"
           >
-            <Button size="lg">
+            <a href="#producto" className={buttonVariants({ size: "lg" })}>
               Probar la demo
               <ArrowRight className="size-4" />
-            </Button>
-            <Button size="lg" variant="secondary">
+            </a>
+            <a
+              href="#caracteristicas"
+              className={buttonVariants({ size: "lg", variant: "secondary" })}
+            >
               Ver cómo funciona
-            </Button>
+            </a>
           </motion.div>
         </motion.div>
 

@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Logo } from "@/components/layout/logo";
 import { MobileNav } from "@/components/layout/mobile-nav";
@@ -64,7 +64,9 @@ export function Navbar() {
           <Button size="sm" variant="ghost">
             Iniciar sesión
           </Button>
-          <Button size="sm">Probar la demo</Button>
+          <a href="#producto" className={buttonVariants({ size: "sm" })}>
+            Probar la demo
+          </a>
         </div>
 
         <button

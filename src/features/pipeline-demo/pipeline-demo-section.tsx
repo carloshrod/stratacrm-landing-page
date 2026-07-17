@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, RotateCcw } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { PipelineBoard } from "./pipeline-board";
 import { usePipelineDemoStore } from "./store";
@@ -12,7 +12,7 @@ export function PipelineDemoSection() {
   const resetDemo = usePipelineDemoStore((state) => state.resetDemo);
 
   return (
-    <section id="producto" className="relative py-20 sm:py-28">
+    <section id="producto" className="relative scroll-mt-20 py-20 sm:py-28">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -83,10 +83,13 @@ export function PipelineDemoSection() {
             Empieza a usar StrataCRM con tus propios deals
           </h3>
 
-          <Button size="lg" className="mt-3">
+          <a
+            href="#precios"
+            className={buttonVariants({ size: "lg", className: "mt-3" })}
+          >
             Comenzar ahora
             <ArrowRight className="size-4" />
-          </Button>
+          </a>
         </motion.div>
       </Container>
     </section>

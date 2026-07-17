@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import type { NavLink } from "@/components/layout/nav-links";
 
@@ -37,7 +37,13 @@ export function MobileNav({
           <Button variant="secondary" onClick={onNavigate}>
             Iniciar sesión
           </Button>
-          <Button onClick={onNavigate}>Probar la demo</Button>
+          <a
+            href="#producto"
+            onClick={onNavigate}
+            className={buttonVariants({ className: "w-full" })}
+          >
+            Probar la demo
+          </a>
         </div>
       </Container>
     </motion.div>

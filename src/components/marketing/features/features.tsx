@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 
 type Feature = {
@@ -86,7 +86,7 @@ const cardVariant = {
 
 export function FeaturesSection() {
   return (
-    <section id="caracteristicas" className="relative py-20 sm:py-28">
+    <section id="caracteristicas" className="relative scroll-mt-20 py-20 sm:py-28">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -162,10 +162,13 @@ export function FeaturesSection() {
             Lleva estas funciones a tu propio pipeline
           </h3>
 
-          <Button size="lg" className="mt-3">
+          <a
+            href="#precios"
+            className={buttonVariants({ size: "lg", className: "mt-3" })}
+          >
             Comenzar gratis
             <ArrowRight className="size-4" />
-          </Button>
+          </a>
         </motion.div>
       </Container>
     </section>

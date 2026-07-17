@@ -3,12 +3,15 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 
 export function FinalCtaSection() {
   return (
-    <section id="comenzar" className="relative overflow-hidden py-24 sm:py-32">
+    <section
+      id="comenzar"
+      className="relative scroll-mt-20 overflow-hidden py-24 sm:py-32"
+    >
       <div
         aria-hidden
         className="pointer-events-none absolute inset-x-0 top-1/2 -z-10 flex -translate-y-1/2 justify-center"
@@ -32,10 +35,13 @@ export function FinalCtaSection() {
             Empieza una prueba gratuita y toma control de tu pipeline desde hoy.
           </p>
 
-          <Button size="lg" className="mt-8">
+          <a
+            href="#precios"
+            className={buttonVariants({ size: "lg", className: "mt-8" })}
+          >
             Probar gratis ahora
             <ArrowRight className="size-4" />
-          </Button>
+          </a>
 
           <p className="mt-4 text-xs text-muted-foreground">
             No requiere tarjeta · Cancela cuando quieras
