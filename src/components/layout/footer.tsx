@@ -1,5 +1,6 @@
 import { Container } from "@/components/ui/container";
 import { Logo } from "@/components/layout/logo";
+import Image from "next/image";
 
 type FooterColumn = {
   title: string;
@@ -90,6 +91,25 @@ export function Footer() {
               Términos
             </a>
           </div>
+        </div>
+        <div className="mt-8 w-full text-center border-t border-border pt-8">
+          <span className="inline-flex items-center text-gray-500 text-xs me-20">
+            Desarrollado con ♥️ por
+            <a
+              href="https://chrod.dev"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex ms-1 font-semibold hover:text-primary"
+            >
+              <Image
+                src="/chrod-logo.png"
+                alt="CHRod logo"
+                width={44}
+                height={28}
+                className="w-11 h-7"
+              />
+            </a>
+          </span>
         </div>
       </Container>
     </footer>
