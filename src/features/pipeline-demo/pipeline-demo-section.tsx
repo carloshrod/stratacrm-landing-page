@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, RotateCcw } from "lucide-react";
 
@@ -31,9 +32,9 @@ export function PipelineDemoSection() {
           </h2>
 
           <p className="mt-4 max-w-xl text-base text-muted-foreground">
-            Mueve deals entre etapas, edita sus valores y mira cómo el
-            pipeline se actualiza al instante. Así de simple es gestionar tus
-            ventas con StrataCRM.
+            Mueve deals entre etapas, edita sus valores y mira cómo el pipeline
+            se actualiza al instante. Así de simple es gestionar tus ventas con
+            StrataCRM.
           </p>
         </motion.div>
 
@@ -83,13 +84,13 @@ export function PipelineDemoSection() {
             Empieza a usar StrataCRM con tus propios deals
           </h3>
 
-          <a
-            href="#precios"
+          <Link
+            href="/trial"
             className={buttonVariants({ size: "lg", className: "mt-3" })}
           >
-            Comenzar ahora
+            Probar gratis ahora
             <ArrowRight className="size-4" />
-          </a>
+          </Link>
         </motion.div>
       </Container>
     </section>

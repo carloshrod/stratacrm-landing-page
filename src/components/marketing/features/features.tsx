@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -53,7 +54,8 @@ const features: Feature[] = [
   {
     icon: BarChart3,
     title: "Panel de analítica",
-    description: "Métricas de ingresos, leads y conversión, siempre a la vista.",
+    description:
+      "Métricas de ingresos, leads y conversión, siempre a la vista.",
     accentBg: "bg-violet-500/15",
     accentText: "text-violet-400",
   },
@@ -86,7 +88,10 @@ const cardVariant = {
 
 export function FeaturesSection() {
   return (
-    <section id="caracteristicas" className="relative scroll-mt-20 py-20 sm:py-28">
+    <section
+      id="caracteristicas"
+      className="relative scroll-mt-20 py-20 sm:py-28"
+    >
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -154,21 +159,20 @@ export function FeaturesSection() {
           className="mt-14 flex flex-col items-center gap-3 text-center"
         >
           <p className="inline-flex items-center gap-2 text-sm font-medium text-emerald-400">
-            <CheckCircle2 className="size-4" />
-            Y esto es solo el comienzo
+            <CheckCircle2 className="size-4" />Y esto es solo el comienzo
           </p>
 
           <h3 className="text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
             Lleva estas funciones a tu propio pipeline
           </h3>
 
-          <a
-            href="#precios"
+          <Link
+            href="/trial"
             className={buttonVariants({ size: "lg", className: "mt-3" })}
           >
-            Comenzar gratis
+            Probar gratis
             <ArrowRight className="size-4" />
-          </a>
+          </Link>
         </motion.div>
       </Container>
     </section>

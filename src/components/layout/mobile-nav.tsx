@@ -1,8 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import type { NavLink } from "@/components/layout/nav-links";
 
@@ -45,9 +46,13 @@ export function MobileNav({
         ))}
 
         <div className="mt-3 flex flex-col gap-2 border-t border-border pt-4">
-          <Button variant="secondary" onClick={onNavigate}>
+          <Link
+            href="/login"
+            onClick={onNavigate}
+            className={buttonVariants({ variant: "secondary", className: "w-full" })}
+          >
             Iniciar sesión
-          </Button>
+          </Link>
           <a
             href="#producto"
             onClick={handleNavClick("#producto")}

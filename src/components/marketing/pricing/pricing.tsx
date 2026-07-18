@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   Ban,
@@ -13,8 +14,9 @@ import {
 } from "lucide-react";
 
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
+import { SalesModal } from "@/features/sales-modal/sales-modal";
 
 type BillingPeriod = "monthly" | "yearly";
 
@@ -32,6 +34,7 @@ type Tier = {
   features: string[];
   cta: string;
   ctaVariant: "primary" | "secondary";
+  href?: string;
   highlighted?: boolean;
 };
 
@@ -63,6 +66,7 @@ const tiers: Tier[] = [
     ],
     cta: "Comenzar",
     ctaVariant: "secondary",
+    href: "/signup?plan=starter",
   },
   {
     name: "Pro",
@@ -78,6 +82,7 @@ const tiers: Tier[] = [
     ],
     cta: "Probar gratis",
     ctaVariant: "primary",
+    href: "/trial",
     highlighted: true,
   },
   {
@@ -169,6 +174,7 @@ function FaqItem({
 export function PricingSection() {
   const [billing, setBilling] = useState<BillingPeriod>("monthly");
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+  const [salesOpen, setSalesOpen] = useState(false);
 
   return (
     <section id="precios" className="relative scroll-mt-20 py-20 sm:py-28">
@@ -318,15 +324,29 @@ export function PricingSection() {
                 ))}
               </ul>
 
-              <Button
-                variant={tier.ctaVariant}
-                className={cn(
-                  "mt-8 w-full",
-                  tier.ctaVariant === "secondary" && secondaryCtaHoverAsPrimary,
-                )}
-              >
-                {tier.cta}
-              </Button>
+              {tier.href ? (
+                <Link
+                  href={tier.href}
+                  className={cn(
+                    buttonVariants({ variant: tier.ctaVariant }),
+                    "mt-8 w-full",
+                    tier.ctaVariant === "secondary" && secondaryCtaHoverAsPrimary,
+                  )}
+                >
+                  {tier.cta}
+                </Link>
+              ) : (
+                <Button
+                  variant={tier.ctaVariant}
+                  onClick={() => setSalesOpen(true)}
+                  className={cn(
+                    "mt-8 w-full",
+                    tier.ctaVariant === "secondary" && secondaryCtaHoverAsPrimary,
+                  )}
+                >
+                  {tier.cta}
+                </Button>
+              )}
             </div>
           ))}
         </motion.div>
@@ -376,6 +396,8 @@ export function PricingSection() {
           </div>
         </motion.div>
       </Container>
+
+      <SalesModal open={salesOpen} onClose={() => setSalesOpen(false)} />
     </section>
   );
 }

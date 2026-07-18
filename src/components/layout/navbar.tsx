@@ -1,11 +1,12 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 import { cn } from "@/lib/utils";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Logo } from "@/components/layout/logo";
 import { MobileNav } from "@/components/layout/mobile-nav";
@@ -61,9 +62,12 @@ export function Navbar() {
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
-          <Button size="sm" variant="ghost">
+          <Link
+            href="/login"
+            className={buttonVariants({ size: "sm", variant: "ghost" })}
+          >
             Iniciar sesión
-          </Button>
+          </Link>
           <a href="#producto" className={buttonVariants({ size: "sm" })}>
             Probar la demo
           </a>

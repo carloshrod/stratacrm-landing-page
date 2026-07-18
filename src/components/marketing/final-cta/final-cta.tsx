@@ -1,7 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ShieldCheck } from "lucide-react";
 
 import { buttonVariants } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
@@ -35,15 +36,16 @@ export function FinalCtaSection() {
             Empieza una prueba gratuita y toma control de tu pipeline desde hoy.
           </p>
 
-          <a
-            href="#precios"
+          <Link
+            href="/trial"
             className={buttonVariants({ size: "lg", className: "mt-8" })}
           >
             Probar gratis ahora
             <ArrowRight className="size-4" />
-          </a>
+          </Link>
 
-          <p className="mt-4 text-xs text-muted-foreground">
+          <p className="mt-5 flex items-center justify-center gap-1.5 text-xs text-muted-foreground">
+            <ShieldCheck className="size-3.5 text-emerald-400" />
             No requiere tarjeta · Cancela cuando quieras
           </p>
         </motion.div>

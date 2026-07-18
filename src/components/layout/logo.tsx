@@ -1,14 +1,18 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import { cn } from "@/lib/utils";
 
 export function Logo({ className }: { className?: string }) {
+  const isHome = usePathname() === "/";
+
   return (
     <Link
       href="/"
       onClick={(event) => {
+        if (!isHome) return;
         event.preventDefault();
         window.scrollTo({ top: 0, behavior: "smooth" });
       }}
